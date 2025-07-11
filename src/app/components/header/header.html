@@ -1,0 +1,43 @@
+<header class="header" id="header">
+  <nav class="nav container">
+    <a routerLink="/" class="nav__logo">
+      <img src="assets/img/logo.webp" alt="logo" />
+      <span>GlobeTrek</span>
+    </a>
+
+    <div class="nav__menu" [class.show-menu]="menuVisible" id="nav-menu">
+      <ul class="nav__list">
+        <li>
+          <a (click)="scrollToSection('home')" class="nav__link" [class.active-link]="activeSection === 'home'">Home</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('destination')" class="nav__link" [class.active-link]="activeSection === 'destination'">Destination</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('testimonials')" class="nav__link" [class.active-link]="activeSection === 'testimonial'">Testimonials</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('gallery')" class="nav__link" [class.active-link]="activeSection === 'gallery'">Gallery</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('contact')" class="nav__link" [class.active-link]="activeSection === 'contact'">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Close Button -->
+      <div class="nav__close" (click)="closeMenu()" id="nav-close">
+        <i class="ri-close-large-line"></i>
+      </div>
+    </div>
+
+    <div class="nav__buttons">
+      <!-- Theme Button -->
+      <i class="ri-moon-fill nav__theme" (click)="toggleTheme()" id="theme-button"></i>
+
+      <!-- Toggle Button -->
+      <div class="nav__toggle" (click)="openMenu()" id="nav-toggle">
+        <i class="ri-apps-2-fill"></i>
+      </div>
+    </div>
+  </nav>
+</header>
