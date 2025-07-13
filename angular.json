@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "travel-website": {
+    "globeTrek": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,10 +16,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -53,10 +50,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "travel-website:build:production"
+              "buildTarget": "globeTrek:build:production"
             },
             "development": {
-              "buildTarget": "travel-website:build:development"
+              "buildTarget": "globeTrek:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,10 +66,7 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
