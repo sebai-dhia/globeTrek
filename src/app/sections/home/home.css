@@ -1,0 +1,125 @@
+
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+}
+
+.home__bg,
+.home__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.home__bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.home__blur {
+  background-color: var(--opacity-color-20);
+  backdrop-filter: blur(40px);
+  transition: background-color .4s;
+}
+
+.home__container {
+  position: relative;
+  padding-block: 2rem 3rem;
+  row-gap: 3rem;
+}
+
+.home__data {
+  text-align: center;
+  color: var(--white-color);
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  line-height: 100%;
+  margin-bottom: 1rem;
+}
+
+.home__description {
+  margin-bottom: 2rem;
+}
+
+.home__swiper {
+  max-width: 320px;
+  border-radius: 1.5rem;
+}
+
+.home__swiper :is(.swiper-button-prev, .swiper-button-next)::after {
+  content: '';
+}
+
+.home__swiper :is(.swiper-button-next, .swiper-button-prev) {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  background-color: var(--opacity-color-30);
+  backdrop-filter: blur(12px);
+  width: 2rem;
+  height: 2rem;
+  top: initial;
+  bottom: 2rem;
+  border-radius: .25rem;
+  transition: background-color .4s;
+}
+
+.home__swiper .swiper-button-prev {
+  left: initial;
+  right: 4rem;
+}
+
+.home__swiper .swiper-button-next {
+  right: 1.25rem;
+}
+
+@media screen and (max-width: 320px) {
+  .home__title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .home__container{
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
+  .home__swiper{
+    max-width: 380px;
+  }
+}
+@media screen and (min-width: 1150px){
+  .home__container{
+    grid-template-columns: 520px 700px;
+    align-items: center;
+    padding-block: 6rem 9rem;
+  }
+  .home__data{
+    text-align: initial;
+    transform: translateX(5rem);
+    z-index: 5;
+  }
+  .home__description{
+    padding-right: 6 rem;
+    margin-bottom: 4rem;
+  }
+  .home__swiper{
+    max-width: 700px;
+    transform: translateX(-3rem);
+  }
+  .home .swiper-button-prev,
+  .home .swiper-button-next{
+    bottom: 2rem;
+  }
+   .home .swiper-button-prev{
+    right: 4.5rem;
+   }
+     .home .swiper-button-next{
+    right: 2rem;
+   }
+}
+  
+  

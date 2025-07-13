@@ -1,0 +1,37 @@
+<section class="home section" id="home">
+  <img src="assets/img/home__bg.webp" alt="" class="home__bg" />
+  <div class="home__blur"></div>
+  <div class="home__container container grid">
+    <div class="home__data">
+      <h1 class="home__title">
+        Travel <br /> Around <br /> The World
+      </h1>
+      <p class="home__description">
+        Explore breathtaking destinations across the globe and turn every journey into a remarkable adventure
+      </p>
+      <a (click)="scrollToDestination()" class="button button__opa-30">
+        Explore The World
+        <i class="ri-arrow-right-line"></i>
+      </a>
+    </div>
+
+    <div class="home__swiper swiper">
+      <div class="swiper-wrapper">
+        @for (img of images; track img) {
+          <article class="home__article swiper-slide">
+            <img [src]="img" alt="home__img" />
+          </article>
+        }
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev">
+        <i class="ri-arrow-left-line"></i>
+      </div>
+      <div class="swiper-button-next">
+        <i class="ri-arrow-right-line"></i>
+      </div>
+    </div>
+  </div>
+</section>
+  
