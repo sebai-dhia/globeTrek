@@ -59,7 +59,7 @@ export class Header implements OnInit {
       header.classList.toggle('bg-header', this.scrollHeader);
     }
 
-    // Update active section
+    // Update active section based on scroll position
     const sections = ['home', 'destination', 'testimonial', 'gallery', 'join'];
     for (const section of sections) {
       const element = document.getElementById(section);

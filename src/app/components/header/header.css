@@ -155,6 +155,7 @@
     background-color: var(--title-color);
   }
   
+
   /* Dark theme with bg-header - desktop navigation links should stay white */
   .dark-theme .bg-header .nav__link {
     color: var(--white-color) !important;

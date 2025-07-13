@@ -32,7 +32,7 @@
 
     <div class="nav__buttons">
       <!-- Theme Button -->
-      <i class="ri-moon-fill nav__theme" (click)="toggleTheme()" id="theme-button"></i>
+      <i [class]="isDarkTheme ? 'ri-sun-fill nav__theme' : 'ri-moon-fill nav__theme'" (click)="toggleTheme()" id="theme-button"></i>
 
       <!-- Toggle Button -->
       <div class="nav__toggle" (click)="openMenu()" id="nav-toggle">
