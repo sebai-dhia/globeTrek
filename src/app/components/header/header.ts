@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -11,8 +11,11 @@ import { RouterLink } from '@angular/router';
 export class Header implements OnInit {
   menuVisible = false;
   isDarkTheme = false;
-  activeSection: string = 'home';
   scrollHeader = false;
+  private sectionIds = ['home', 'destination', 'testimonials', 'gallery', 'contact'];
+  private isScrollingByClick = false;
+
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
     // Check if theme is saved in localStorage
@@ -21,6 +24,7 @@ export class Header implements OnInit {
       this.isDarkTheme = true;
       document.body.classList.add('dark-theme');
     }
+    this.updateActiveLink();
   }
 
   openMenu() {
@@ -39,37 +43,53 @@ export class Header implements OnInit {
     localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
   }
 
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      // Update URL without hash
-      history.pushState(null, '', `/${sectionId}`);
-      // Close mobile menu after navigation
-      this.closeMenu();
+  onNavClick(sectionId: string) {
+    this.isScrollingByClick = true;
+    this.setActiveLink(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    this.closeMenu();
+    setTimeout(() => {
+      this.isScrollingByClick = false;
+    }, 800); // Adjust timeout to match scroll duration
+  }
+
+  setActiveLink(sectionId: string) {
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${sectionId}`) {
+        this.renderer.addClass(link, 'active-link');
+      } else {
+        this.renderer.removeClass(link, 'active-link');
+      }
+    });
+  }
+
+  updateActiveLink() {
+    let currentSectionId = this.sectionIds[0];
+    for (const id of this.sectionIds) {
+      const section = document.getElementById(id);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 80) {
+          currentSectionId = id;
+        }
+      }
     }
+    this.setActiveLink(currentSectionId);
   }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    // Change header background on scroll
+    // Always update header background
     const header = document.getElementById('header');
     if (header) {
       this.scrollHeader = window.scrollY >= 50;
       header.classList.toggle('bg-header', this.scrollHeader);
     }
-
-    // Update active section based on scroll position
-    const sections = ['home', 'destination', 'testimonial', 'gallery', 'join'];
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= 80 && rect.bottom >= 80) {
-          this.activeSection = section;
-          break;
-        }
-      }
+    // Only update active link if not scrolling by click
+    if (!this.isScrollingByClick) {
+      this.updateActiveLink();
     }
   }
 }

@@ -1,6 +1,6 @@
 <header class="header" id="header">
   <nav class="nav container">
-    <a routerLink="/" class="nav__logo">
+    <a routerLink="/" class="nav__logo" (click)="onNavClick('home')">
       <img src="assets/img/logo.webp" alt="logo" />
       <span>GlobeTrek</span>
     </a>
@@ -8,19 +8,19 @@
     <div class="nav__menu" [class.show-menu]="menuVisible" id="nav-menu">
       <ul class="nav__list">
         <li>
-          <a (click)="scrollToSection('home')" class="nav__link" [class.active-link]="activeSection === 'home'">Home</a>
+          <a href="#home" class="nav__link" (click)="onNavClick('home')">Home</a>
         </li>
         <li>
-          <a (click)="scrollToSection('destination')" class="nav__link" [class.active-link]="activeSection === 'destination'">Destination</a>
+          <a href="#destination" class="nav__link" (click)="onNavClick('destination')">Destination</a>
         </li>
         <li>
-          <a (click)="scrollToSection('testimonials')" class="nav__link" [class.active-link]="activeSection === 'testimonial'">Testimonials</a>
+          <a href="#testimonials" class="nav__link" (click)="onNavClick('testimonials')">Testimonials</a>
         </li>
         <li>
-          <a (click)="scrollToSection('gallery')" class="nav__link" [class.active-link]="activeSection === 'gallery'">Gallery</a>
+          <a href="#gallery" class="nav__link" (click)="onNavClick('gallery')">Gallery</a>
         </li>
         <li>
-          <a (click)="scrollToSection('contact')" class="nav__link" [class.active-link]="activeSection === 'contact'">Contact</a>
+          <a href="#contact" class="nav__link" (click)="onNavClick('contact')">Contact</a>
         </li>
       </ul>
 
