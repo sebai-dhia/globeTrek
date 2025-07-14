@@ -1,0 +1,20 @@
+<section class="destination section" id="destination">
+  <h2 class="section__title">Find Your Best <br /> Destination</h2>
+
+  <div class="destination__container container grid">
+    @for (destination of destinations; track destination) {
+      <article class="destination__card">
+        <img [src]="destination.image" alt="image" class="destination__img" />
+
+        <div class="destination__data">
+          <h3 class="destination__subtitle">{{ destination.subtitle }}</h3>
+          <h2 class="destination__title">{{ destination.title }}</h2>
+          <p class="destination__contry">
+            <i class="ri-map-pin-line"></i>
+            <span>{{ destination.country }}</span>
+          </p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
