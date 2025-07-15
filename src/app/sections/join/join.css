@@ -1,0 +1,72 @@
+/*=============== JOIN ===============*/
+.join__container {
+  row-gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.join__data {
+  text-align: center;
+}
+
+.join__data section__title {
+  margin-bottom: 1rem
+}
+
+.join__description {
+  margin-bottom: 2rem;
+}
+
+.join__form {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.join__form input {
+  width: 100%;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 1rem 1rem;
+  border-radius: .5rem;
+  transition: background-color .4s;
+}
+
+.join__button {
+  padding-block: 1.25rem;
+  cursor: pointer;
+}
+
+.join__img {
+  width: 300px;
+  border-radius: 1.5rem;
+  justify-self: center;
+}
+
+@media screen and (min-width: 576px) {
+  .join__container{
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
+  .join__img {
+    width: 380px;
+  }
+}
+@media screen and (min-width: 1150px){
+  .join__container{
+    grid-template-columns: 360px 500px;
+    align-items: center;
+    column-gap: 10rem;
+  }
+  .join__data{
+    text-align: initial;
+  }
+  .join__data .section__title{
+    margin-bottom: 1.5rem;
+    text-align: start;
+  }
+  .join__description{
+    margin-bottom: 3rem;
+  }
+  .join__img{
+    width: 500px;
+  }
+}
