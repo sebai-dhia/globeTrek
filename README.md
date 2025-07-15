@@ -1,59 +1,95 @@
-# TravelWebsite
+# 🌍 GlobeTrek Travel Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+A modern, responsive travel website built with **Angular 20** showcasing beautiful destinations, user testimonials, and travel experiences. Perfect for travel agencies, bloggers, or anyone looking to showcase travel content with a focus on user experience and visual appeal.
 
-## Development server
+![GlobeTrek Travel Website](src/assets/img/front.webp)
 
-To start a local development server, run:
+## ✨ Features
 
+### 🏠 **Home Section**
+Hero banner with compelling travel messaging, auto-playing image carousel with Swiper.js, smooth scroll navigation to destinations, and responsive design for all devices.
+
+### 🗺️ **Destinations**
+Beautiful destination cards with location details featuring Pyramids of Giza, Louvre Museum, and Sagrada Familia with country information, map pin icons, hover effects and smooth transitions.
+
+### 💬 **Testimonials**
+Real user reviews from travelers worldwide in an auto-playing carousel with profile information, authentic travel stories from different destinations, and smooth transitions between testimonials.
+
+### 📸 **Gallery**
+Stunning travel photography from various countries in a responsive grid layout featuring destinations from Australia, Italy, France, and Greece with location tags for each image.
+
+### 📧 **Newsletter**
+Email signup form for travel updates with engaging copy to encourage subscriptions and visual appeal with accompanying travel imagery.
+
+### 🎨 **Design Features**
+Dark/light theme toggle with persistent preference, seamless section navigation with smooth scrolling, convenient back-to-top functionality, mobile-friendly hamburger menu, and modern typography using Montserrat + Dancing Script fonts.
+
+## 🛠️ Tech Stack
+
+- **Angular 20**: Latest version with standalone components
+- **TypeScript**: Type-safe development
+- **Swiper.js**: Touch-enabled carousels
+- **RemixIcon**: Comprehensive icon library
+- **CSS3**: Modern styling with variables and animations
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v16+)
+- Angular CLI (`npm install -g @angular/cli`)
+
+### Installation
 ```bash
+# Clone and install
+git clone https://github.com/sebai-dhia/globeTrek.git
+cd globeTrek
+npm install
+
+# Start development server
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Visit `http://localhost:4200` to view the app.
 
-## Code scaffolding
+## 📁 Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── components/        # Header, Footer, Scroll-up
+│   ├── sections/          # Home, Destination, Gallery, Testimonial, Join
+│   └── services/          # Theme management
+├── assets/
+│   ├── img/               # All project images
+│   └── css/               # External CSS libraries
+└── styles.css             # Global styles and variables
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🌟 Key Highlights
 
-```bash
-ng generate --help
-```
+- **Modern Angular Architecture**: Built with Angular 20 and standalone components
+- **Fully Responsive**: Works perfectly on mobile, tablet, and desktop
+- **Performance Optimized**: Fast loading with smooth animations
+- **Accessibility**: Keyboard navigation and screen reader support
+- **Theme Support**: Light and dark mode with persistent preferences
+- **Professional Design**: Clean, modern UI with attention to detail
 
-## Building
+## 📱 Responsive Design
 
-To build the project run:
+Optimized for:
+- **Mobile**: 320px - 768px
+- **Tablet**: 768px - 1024px  
+- **Desktop**: 1024px+
 
-```bash
-ng build
-```
+## 🎯 User Experience
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Fixed Header**: Always accessible navigation
+- **Smooth Scrolling**: Seamless section transitions
+- **Active Section Highlighting**: Visual feedback
+- **Mobile Menu**: Collapsible navigation
+- **Interactive Elements**: Hover effects and animations
+- **Performance**: Optimized assets and fast loading
 
-## Running unit tests
+## 📄 License
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License.
