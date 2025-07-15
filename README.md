@@ -1,6 +1,6 @@
 # 🌍 GlobeTrek Travel Website
 
-A modern, responsive travel website built with **Angular 20** showcasing beautiful destinations, user testimonials, and travel experiences. Perfect for travel agencies, bloggers, or anyone looking to showcase travel content with a focus on user experience and visual appeal.
+A modern, responsive travel website built with **Angular 20** showcasing beautiful destinations, user testimonials, and travel experiences. Perfect for travel agencies, bloggers, or anyone looking to showcase travel content with a focus on user experience and visual appeal. [Live Demo](https://globetrek-website.netlify.app)
 
 ![GlobeTrek Travel Website](src/assets/img/front.webp)
 
