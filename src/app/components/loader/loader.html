@@ -1,0 +1,10 @@
+@if (show) {
+  <div class="loader-overlay">
+    <div class="loader-content">
+      <div class="progress-bar">
+        <div class="progress" [style.width.%]="progress"></div>
+      </div>
+      <span>{{progress}}%</span>
+    </div>
+  </div>
+}
